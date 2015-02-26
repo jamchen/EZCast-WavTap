@@ -12,7 +12,9 @@
 #define SAMPLE_RATES_KEY "SampleRates"
 #define SEPARATE_STREAM_BUFFERS_KEY "SeparateStreamBuffers"
 #define SEPARATE_INPUT_BUFFERS_KEY "SeparateInputBuffers"
-#define WavTapDevice com_wavtap_driver_WavTapDevice
+#define WavTapDevice com_actionsmicro_EZCastVAD
+#define WavTapEngine com_actionsmicro_EZCastVADEngine
+
 
 class WavTapEngine;
 

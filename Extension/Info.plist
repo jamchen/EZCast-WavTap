@@ -5,17 +5,17 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
-	<string>WavTap</string>
+	<string>${PRODUCT_NAME}</string>
 	<key>CFBundleGetInfoString</key>
 	<string>v${MODULE_VERSION}</string>
 	<key>CFBundleIconFile</key>
 	<string></string>
 	<key>CFBundleIdentifier</key>
-	<string>com.wavtap.driver.WavTap</string>
+	<string>${MODULE_NAME}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>WavTap</string>
+	<string>${PRODUCT_NAME}</string>
 	<key>CFBundlePackageType</key>
 	<string>KEXT</string>
 	<key>CFBundleShortVersionString</key>
@@ -26,12 +26,14 @@
 	<string>${MODULE_VERSION}</string>
 	<key>IOKitPersonalities</key>
 	<dict>
-		<key>WavTapDriver</key>
+		<key>EZSound</key>
 		<dict>
 			<key>AudioEngine</key>
 			<dict>
+				<key>BlockSize</key>
+				<integer>8192</integer>
 				<key>Description</key>
-				<string>WavTap</string>
+				<string>${PRODUCT_NAME}</string>
 				<key>Formats</key>
 				<array>
 					<dict>
@@ -68,15 +70,13 @@
 					<integer>176400</integer>
 					<integer>192000</integer>
 				</array>
-				<key>BlockSize</key>
-				<integer>8192</integer>
 			</dict>
 			<key>CFBundleIdentifier</key>
-			<string>com.wavtap.driver.WavTap</string>
+			<string>${MODULE_NAME}</string>
 			<key>IOClass</key>
-			<string>com_wavtap_driver_WavTapDevice</string>
+			<string>${AUDIO_DEVICE_CLASS}</string>
 			<key>IOMatchCategory</key>
-			<string>com_wavtap_driver_WavTapDevice</string>
+			<string>${AUDIO_DEVICE_CLASS}</string>
 			<key>IOProviderClass</key>
 			<string>IOResources</string>
 			<key>IOResourceMatch</key>

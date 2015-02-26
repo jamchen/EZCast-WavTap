@@ -1,13 +1,13 @@
 .PHONY: build clean install uninstall
 
-PRODUCT_NAME=WavTap
+PRODUCT_NAME=EZSound
 KEXT_DIR=$$(pwd)
 KEXT_BUILD_DIR=$(KEXT_DIR)/Build/UninstalledProducts
 BUILD_TYPE=Deployment
 
 build:
 	cd $(KEXT_DIR)
-	xcodebuild -project $(KEXT_DIR)/$(PRODUCT_NAME).xcodeproj -target WavTapDriver -configuration $(BUILD_TYPE) clean build
+	xcodebuild -project $(KEXT_DIR)/WavTap.xcodeproj -target EZSound -configuration $(BUILD_TYPE) clean build
 
 clean:
 	rm -rf $(KEXT_DIR)/Build

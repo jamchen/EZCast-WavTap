@@ -17,9 +17,9 @@ bool WavTapDevice::initHardware(IOService *provider) {
   if (!super::initHardware(provider)) {
     return false;
   }
-  setDeviceName("WavTap");
-  setDeviceShortName("WavTap");
-  setManufacturerName("WavTap");
+  setDeviceName("EZSound");
+  setDeviceShortName("EZSound");
+  setManufacturerName("WinnerWave");
   if (!createAudioEngines()){
     return false;
   }

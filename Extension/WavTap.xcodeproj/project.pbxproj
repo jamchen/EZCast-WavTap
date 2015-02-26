@@ -18,7 +18,7 @@
 		2249EC7E0ED70C7E003C8357 /* WavTap.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = WavTap.xcconfig; sourceTree = "<group>"; };
 		3EA7CAEA165F609A00BD5263 /* WavTapDevice.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = WavTapDevice.hpp; sourceTree = "<group>"; };
 		3EA7CAEB165F609A00BD5263 /* WavTapEngine.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = WavTapEngine.hpp; sourceTree = "<group>"; };
-		54D0ADA60A5E329B006380BD /* WavTap.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WavTap.kext; sourceTree = BUILT_PRODUCTS_DIR; };
+		54D0ADA60A5E329B006380BD /* EZSound.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EZSound.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		789FB3540D62DE4E00C0F5C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C93407640601317E002E6A19 /* WavTapEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; path = WavTapEngine.cpp; sourceTree = "<group>"; };
 		C93407660601317E002E6A19 /* WavTapDevice.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; path = WavTapDevice.cpp; sourceTree = "<group>"; };
@@ -58,7 +58,7 @@
 		19C28FB6FE9D52B211CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				54D0ADA60A5E329B006380BD /* WavTap.kext */,
+				54D0ADA60A5E329B006380BD /* EZSound.kext */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -89,9 +89,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		54D0AD930A5E329B006380BD /* WavTapDriver */ = {
+		54D0AD930A5E329B006380BD /* EZSound */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 54D0ADA10A5E329B006380BD /* Build configuration list for PBXNativeTarget "WavTapDriver" */;
+			buildConfigurationList = 54D0ADA10A5E329B006380BD /* Build configuration list for PBXNativeTarget "EZSound" */;
 			buildPhases = (
 				54D0AD950A5E329B006380BD /* Headers */,
 				54D0AD980A5E329B006380BD /* Resources */,
@@ -103,10 +103,10 @@
 			);
 			dependencies = (
 			);
-			name = WavTapDriver;
+			name = EZSound;
 			productInstallPath = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 			productName = SampleAudioDriver;
-			productReference = 54D0ADA60A5E329B006380BD /* WavTap.kext */;
+			productReference = 54D0ADA60A5E329B006380BD /* EZSound.kext */;
 			productType = "com.apple.product-type.kernel-extension.iokit";
 		};
 /* End PBXNativeTarget section */
@@ -116,6 +116,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0510;
+				TargetAttributes = {
+					54D0AD930A5E329B006380BD = {
+						DevelopmentTeam = EWX3D298F8;
+					};
+				};
 			};
 			buildConfigurationList = 548AD6D309CE873500241D17 /* Build configuration list for PBXProject "WavTap" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -131,7 +136,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				54D0AD930A5E329B006380BD /* WavTapDriver */,
+				54D0AD930A5E329B006380BD /* EZSound */,
 			);
 		};
 /* End PBXProject section */
@@ -188,6 +193,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2249EC7E0ED70C7E003C8357 /* WavTap.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				CONFIGURATION_BUILD_DIR = "$(PROJECT_DIR)/Build";
 				CONFIGURATION_TEMP_DIR = "$(PROJECT_DIR)/Build";
@@ -204,8 +211,7 @@
 				INSTALL_GROUP = "$(GROUP)";
 				INSTALL_OWNER = "$(USER)";
 				INSTALL_PATH = "";
-				MODULE_NAME = com.wavtap.driver.WavTap;
-				PRODUCT_NAME = WavTap;
+				PROVISIONING_PROFILE = "";
 				SYMROOT = "$(PROJECT_DIR)/Build";
 				WARNING_CFLAGS = (
 					"-Wmost",
@@ -220,6 +226,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2249EC7E0ED70C7E003C8357 /* WavTap.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				CONFIGURATION_BUILD_DIR = "$(PROJECT_DIR)/Build";
 				CONFIGURATION_TEMP_DIR = "$(PROJECT_DIR)/Build";
@@ -233,8 +241,7 @@
 				INSTALL_GROUP = "$(GROUP)";
 				INSTALL_OWNER = "$(USER)";
 				INSTALL_PATH = "";
-				MODULE_NAME = com.wavtap.driver.WavTap;
-				PRODUCT_NAME = WavTap;
+				PROVISIONING_PROFILE = "";
 				SYMROOT = "$(PROJECT_DIR)/Build";
 				WARNING_CFLAGS = (
 					"-Wmost",
@@ -257,7 +264,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Development;
 		};
-		54D0ADA10A5E329B006380BD /* Build configuration list for PBXNativeTarget "WavTapDriver" */ = {
+		54D0ADA10A5E329B006380BD /* Build configuration list for PBXNativeTarget "EZSound" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				54D0ADA20A5E329B006380BD /* Development */,
