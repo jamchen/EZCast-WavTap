@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-PRODUCT_NAME=WavTap
+PRODUCT_NAME=EZSound
 
 sudo chmod -R 700 /System/Library/Extensions/$PRODUCT_NAME.kext
 sudo chown -R root:wheel /System/Library/Extensions/$PRODUCT_NAME.kext
