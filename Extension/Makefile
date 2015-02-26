@@ -1,6 +1,7 @@
 .PHONY: build clean install uninstall
 
 PRODUCT_NAME=EZSound
+IDENTIFIER=com.actionsmicro.ezsound
 KEXT_DIR=$$(pwd)
 KEXT_BUILD_DIR=$(KEXT_DIR)/Build/UninstalledProducts
 BUILD_TYPE=Deployment
@@ -20,7 +21,7 @@ install: build
 	sudo kextutil /System/Library/Extensions/$(PRODUCT_NAME).kext
 
 uninstall:
-	if [[ "$(shell kextstat | grep $(PRODUCT_NAME) | grep -v grep)" ]]; then sudo kextunload /System/Library/Extensions/$(PRODUCT_NAME).kext; fi
+	if [[ "$(shell kextstat | grep $(IDENTIFIER) | grep -v grep)" ]]; then sudo kextunload -b $(IDENTIFIER); fi
 	sudo rm -rf /System/Library/Extensions/$(PRODUCT_NAME).kext
 	sudo rm -rf /Library/Receipts/$(PRODUCT_NAME)*
 	sudo rm -rf /var/db/receipts/*$(PRODUCT_NAME).*
