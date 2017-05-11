@@ -58,7 +58,8 @@ bool WavTapDevice::initControls(WavTapEngine* audioEngine) {
     channelNameMap[channel] = "Unknown Channel";
   }
   for (unsigned channel = 0; channel <= NUM_CHANS; channel++) {
-    control = IOAudioLevelControl::createVolumeControl(WavTapDevice::kVolumeMax, 0, WavTapDevice::kVolumeMax, (-40 << 16) + (32768), 0, channel, channelNameMap[channel], channel, kIOAudioControlUsageOutput);
+      SInt32 value = -40;   //we dont directly shift like this: -40 << 16  , which leads to compiler warning for shifting negative value is undefined
+    control = IOAudioLevelControl::createVolumeControl(WavTapDevice::kVolumeMax, 0, WavTapDevice::kVolumeMax, ( value << 16) + (32768), 0, channel, channelNameMap[channel], channel, kIOAudioControlUsageOutput);
     addControl(control, (IOAudioControl::IntValueChangeHandler)volumeChangeHandler);
     control = IOAudioLevelControl::createVolumeControl(WavTapDevice::kGainMax, 0, WavTapDevice::kGainMax, 0, (40 << 16) + (32768), channel, channelNameMap[channel], channel, kIOAudioControlUsageInput);
     addControl(control, (IOAudioControl::IntValueChangeHandler)gainChangeHandler);
